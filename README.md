@@ -1,1 +1,339 @@
-# 545
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Mẫu - Wireframe</title>
+    <style>
+        /* Reset và cơ bản */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #fff;
+            border-bottom: 2px solid #ddd;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            border: 2px solid #333;
+            padding: 5px 10px;
+        }
+        
+        /* Navigation */
+        .desktop-nav {
+            display: none;
+        }
+        
+        .mobile-nav {
+            display: block;
+            margin-top: 15px;
+        }
+        
+        .hamburger {
+            font-size: 24px;
+            cursor: pointer;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            display: inline-block;
+        }
+        
+        .mobile-menu {
+            display: none;
+            list-style: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Main content */
+        main {
+            padding: 20px 0;
+        }
+        
+        .hero {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            padding: 30px 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .content-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .content-item {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            padding: 20px;
+            flex: 1;
+        }
+        
+        .content-item h2 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .sidebar h2 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #fff;
+            border-top: 2px solid #ddd;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        /* Responsive cho Desktop */
+        @media (min-width: 768px) {
+            /* Header và Navigation cho desktop */
+            .mobile-nav {
+                display: none;
+            }
+            
+            .desktop-nav {
+                display: block;
+                float: right;
+                margin-top: 8px;
+            }
+            
+            .desktop-menu {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+            }
+            
+            .desktop-menu li {
+                border: 1px solid #333;
+                padding: 8px 15px;
+            }
+            
+            /* Layout chính cho desktop */
+            .main-content {
+                display: flex;
+                gap: 20px;
+            }
+            
+            .content-grid {
+                flex-direction: row;
+                flex-wrap: wrap;
+                flex: 3;
+            }
+            
+            .content-item {
+                min-width: calc(50% - 10px);
+            }
+            
+            .sidebar {
+                flex: 1;
+                margin-top: 0;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+        
+        /* Responsive cho Desktop lớn */
+        @media (min-width: 992px) {
+            .content-item {
+                min-width: calc(33.333% - 14px);
+            }
+        }
+        
+        /* Các phần tử wireframe */
+        .wireframe-element {
+            margin-bottom: 10px;
+        }
+        
+        .wireframe-img {
+            background-color: #eee;
+            border: 1px dashed #999;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .wireframe-text {
+            background-color: #eee;
+            border: 1px dashed #999;
+            height: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .wireframe-text.short {
+            width: 60%;
+        }
+        
+        .wireframe-text.medium {
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">LOGO</div>
+            
+            <!-- Navigation cho desktop (ẩn trên mobile) -->
+            <nav class="desktop-nav">
+                <ul class="desktop-menu">
+                    <li>Trang chủ</li>
+                    <li>Giới thiệu</li>
+                    <li>Dịch vụ</li>
+                    <li>Liên hệ</li>
+                </ul>
+            </nav>
+            
+            <!-- Navigation cho mobile -->
+            <nav class="mobile-nav">
+                <div class="hamburger" onclick="toggleMenu()">☰ MENU</div>
+                <ul class="mobile-menu" id="mobileMenu">
+                    <li>Trang chủ</li>
+                    <li>Giới thiệu</li>
+                    <li>Dịch vụ</li>
+                    <li>Liên hệ</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <!-- Hero section -->
+            <section class="hero">
+                <h1>TIÊU ĐỀ CHÍNH CỦA TRANG WEB</h1>
+                <div class="wireframe-element">
+                    <div class="wireframe-text medium"></div>
+                    <div class="wireframe-text"></div>
+                    <div class="wireframe-text short"></div>
+                </div>
+            </section>
+            
+            <div class="main-content">
+                <!-- Content grid -->
+                <section class="content-grid">
+                    <article class="content-item">
+                        <div class="wireframe-img">HÌNH ẢNH</div>
+                        <h2>Tiêu đề bài viết 1</h2>
+                        <div class="wireframe-text"></div>
+                        <div class="wireframe-text"></div>
+                        <div class="wireframe-text short"></div>
+                    </article>
+                    
+                    <article class="content-item">
+                        <div class="wireframe-img">HÌNH ẢNH</div>
+                        <h2>Tiêu đề bài viết 2</h2>
+                        <div class="wireframe-text"></div>
+                        <div class="wireframe-text"></div>
+                        <div class="wireframe-text short"></div>
+                    </article>
+                    
+                    <article class="content-item">
+                        <div class="wireframe-img">HÌNH ẢNH</div>
+                        <h2>Tiêu đề bài viết 3</h2>
+                        <div class="wireframe-text"></div>
+                        <div class="wireframe-text"></div>
+                        <div class="wireframe-text short"></div>
+                    </article>
+                </section>
+                
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <h2>THANH BÊN</h2>
+                    <div class="wireframe-element">
+                        <div class="wireframe-text"></div>
+                        <div class="wireframe-text short"></div>
+                        <div class="wireframe-text"></div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <div class="wireframe-text"></div>
+                        <div class="wireframe-text short"></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="wireframe-element">
+                <div class="wireframe-text medium"></div>
+                <div class="wireframe-text short"></div>
+                <div class="wireframe-text short"></div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Hàm toggle menu mobile
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+        
+        // Đóng menu khi click ra ngoài (tùy chọn)
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
